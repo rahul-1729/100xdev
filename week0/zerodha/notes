@@ -1,0 +1,20 @@
+----------------HTML----------
+
+<div></div>
+<h1></h1>
+<img></img>
+<a></a>
+<button></button>
+
+-------------------CSS-----------
+display:flex 
+justify-content: (many opions but can be used only when you use flex)
+color:
+background-color
+box-shadow (takes 4 values)
+font-size
+font-weight
+font-family
+text-align
+
+
