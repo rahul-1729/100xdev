@@ -5,17 +5,49 @@
     <title>Interest</title>
 
     <style>
-        .input{
+         body{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             height: 80vh;
+             background-color: rgb(132, 132, 180);
 
-        }
+         }
+         .input{
+            padding: 15px ;
+            color: rgb(116, 116, 116);
+            border-radius: 7px;
+            font-size: 15px;
+            box-shadow: 3px 3px 4px rgb(182, 182, 238);
+            border: none;
+            
+         }
+         .container{
+            display: flex;
+             justify-content: center;
+             padding: 12px;
+         }
+
+         #ans{
+            font-size: 26px;
+            color: rgb(255, 255, 255);
+            font-family: sans-serif;
+         }
+         .input:hover{
+            
+            box-shadow: 3px 3px 4px rgb(255, 255, 255);
+            border: none;
+            
+         }
+       
     </style>
 </head>
 <body>
-    <div class ="input"><input   oninput="debouncer()" type="number" name="" id="principal" placeholder="Principal"></div>
-    <div class ="input"><input   oninput="debouncer()"  type="number" name="" id="rate" placeholder="Rate"></div>
-    <div class ="input"><input   oninput="debouncer()" type="number" name="" id="year" placeholder="Year"></div>
+    <div class="container" ><input  class ="input" oninput="debouncer()" type="number" name="" id="principal" placeholder="Principal"></div>
+    <div class="container"><input   class ="input"oninput="debouncer()"  type="number" name="" id="rate" placeholder="Rate"></div>
+    <div  class="container" ><input class ="input" oninput="debouncer()" type="number" name="" id="year" placeholder="Year"></div>
      
-    <div id="ans"></div> 
+    <div id="ans" class="container"></div> 
 
     <script>
         let timeOut_id
