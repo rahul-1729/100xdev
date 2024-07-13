@@ -58,18 +58,28 @@
             {    
                 const a = document.getElementById("a").value
                 const b = document.getElementById("b").value
-                 const element = document.getElementById("butt")
+                const element = document.getElementById("butt")
     
-                 let c = parseInt(a)+parseInt(b)
+                //  let c = parseInt(a)+parseInt(b)
                  
                  
-                if (isNaN(a)||isNaN(b)) {
-                    element.innerHTML = "Incorrect inputs"
-                }  
-                else
-                {
-                    element.innerHTML=c
-                }
+                // if (isNaN(a)||isNaN(b)) {
+                //     element.innerHTML = "Incorrect inputs"
+                // }  
+                // else
+                // {
+                //     element.innerHTML=c
+                // }
+                const res =fetch(`http://localhost:3500/api/v1/sum?a=${a}&b=${b}`) //hosted  in my local machine as CRUD using sequelize
+
+                res.then(function(response){
+                   response.text().then(function(ans){
+                    console.log(ans);
+                    element.innerHTML=ans;
+                   })
+                })
+                //fetch return a promise as res and on feeding this to a function the response that it returns is again a promise since we have to know wether it is a text , json etc
+                
                  
               
                 
