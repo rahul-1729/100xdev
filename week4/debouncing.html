@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+        <style>
+             body{
+                display:flex;
+              justify-content: center;
+              flex-direction: column;
+                align-items: center;
+                height: 80vh;
+                background-color: rgb(243, 242, 242);
+             }
+            .input{
+            padding: 12px;
+            margin:5px;
+            border-radius: 10px;
+            border-width: 0.5px;
+            font-size: 15px;
+            color:rgb(105, 105, 105);
+            } 
+            
+            
+            .style-button{
+               background-color: rgb(106, 181, 243);
+               padding: 10px 15px;
+               color: white;
+               border-radius: 5px;
+               border:none;
+               box-shadow: 1px 3px 3px rgb(158, 159, 160);
+               cursor: pointer;
+               transition: box-shadow 0.3s ease;
+
+            }
+            .style-button:hover{
+                box-shadow: 1px 3px 3px rgb(168, 169, 170);
+                background-color: black;
+            }
+            #butt{
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 100;
+                font-family: sans-serif;
+                color:rgb(92, 92, 92);
+               
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+       
+            <div oninput="debounce()" class="input"><input type="text" placeholder="Enter the first number" class="input" id="a"></div>
+            <div  oninput="debounce()" class="input"><input type="text" placeholder="Enter the second number" class="input" id ="b"></div>
+            <div id ="butt"></div>
+      
+       
+        <script>
+
+        let timeOut_id     
+        function debounce ()
+        {  
+           clearTimeout(timeOut_id)
+           timeOut_id =setTimeout(CalculateSum,500)
+             
+        }
+        async function CalculateSum()
+            {    
+                const a = document.getElementById("a").value
+                const b = document.getElementById("b").value
+                const element = document.getElementById("butt")
+    
+               
+                const response =await fetch(`http://localhost:3500/api/v1/sum?a=${a}&b=${b}`) 
+
+                ans =await response.text() 
+                    element.innerHTML=ans;
+                
+            }
+        </script>
+    </body>
+</html>
