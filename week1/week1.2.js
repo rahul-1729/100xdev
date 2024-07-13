@@ -74,6 +74,7 @@
     // }
 
     // setTimeout(greet,4*1000);
+    // console.log("hello")
     // const say = "hello Buddy ,keep going and be silent this time"
 
     // setInterval
@@ -126,37 +127,39 @@
 
 
 
-    var hour =23;
-    var min =59;
-    var sec =30;
-    function clock()
-    {   
-        sec = sec+1;
-        if(sec>=60)
-       {
-            min=min+1;
-            sec =0;
-        }
-       if(min>=60)
-       {
-         hour=hour+1;
-         min =0;
-       }
-       if(hour>=24)
-       {
-          sec =0;
-          min =0;
-          hour =0;
-       }
-       let h = hour<10?"0"+hour.toString():hour.toString();
-       let m = min<10?"0"+min.toString():min.toString();
-       let s=  sec<10?"0"+sec.toString():sec.toString()
+        // var hour =0;
+        // var min =0;
+        // var sec =0;
+        // function clock()
+        // {   
+        //     sec = sec+1;
+        //     if(sec>=60)
+        // {
+        //         min=min+1;
+        //         sec =0;
+        //     }
+        // if(min>=60)
+        // {
+        //     hour=hour+1;
+        //     min =0;
+        // }
+        // if(hour>=24)
+        // {
+        //     sec =0;
+        //     min =0;
+        //     hour =0;
+        // }
+        // let h = hour<10?"0"+hour.toString():hour.toString();
+        // let m = min<10?"0"+min.toString():min.toString();
+        // let s=  sec<10?"0"+sec.toString():sec.toString()
 
-       console.log(`${h}:${m}:${s}`);
-
-
-    }
+        // console.log(`${h}:${m}:${s}`);
 
 
+        // }
 
-    setInterval(clock,1*1000)
+
+
+        // setInterval(clock,1*1000)
+
+        //NOTE: setTimeout and setInterval are asyncronous in nature
