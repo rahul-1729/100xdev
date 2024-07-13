@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest</title>
+
+    <style>
+        .input{
+
+        }
+    </style>
+</head>
+<body>
+    <div class ="input"><input   oninput="debouncer()" type="number" name="" id="principal" placeholder="Principal"></div>
+    <div class ="input"><input   oninput="debouncer()"  type="number" name="" id="rate" placeholder="Rate"></div>
+    <div class ="input"><input   oninput="debouncer()" type="number" name="" id="year" placeholder="Year"></div>
+     
+    <div id="ans"></div> 
+
+    <script>
+        let timeOut_id
+        function debouncer()
+        {
+            clearTimeout(timeOut_id)
+            timeOut_id =setTimeout(interest,500)
+        }
+        async function interest()
+        {
+            const a = document.getElementById("principal").value
+            const b = document.getElementById("rate").value
+            const c = document.getElementById("year").value
+            const interest = document.getElementById("ans")
+            
+            const res = await fetch(`http://localhost:3500/api/v1/interest?p=${a}&r=${b}&y=${c}`)
+            const response = await res.text()
+            interest.innerHTML=response
+        }
+    </script>
+</body>
+</html>
