@@ -1,0 +1,18 @@
+<html lang="en">
+<script>
+    function no_of_clicks()
+    {   
+        
+        let counter = document.getElementById("btn").innerHTML;
+        let count = counter.split(" ")[1];
+        count = parseInt(count)+1;
+        document.getElementById("btn").innerHTML = "Counter " + count
+    }
+     
+
+</script>
+<body>
+
+    <button id ="btn" onclick="no_of_clicks()">Counter 0</button>
+</body>
+</html>
