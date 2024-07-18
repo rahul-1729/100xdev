@@ -1,0 +1,32 @@
+<html lang="en">
+<body>
+    <div id ="Button_container"></div>
+
+    <script>
+        let state ={
+            count :0
+        }
+        function buttonPress()
+        {
+             state.count = state.count+1;
+             buttonReRender();
+        }
+        function buttonCreate(count)
+        {   
+           const button = document.createElement("button");
+           button.innerHTML =`Counter ${count}`;
+           button.setAttribute("onclick","buttonPress()")
+            return button
+        }
+        function buttonReRender()
+        {   
+            const cont = document.getElementById("Button_container");
+            cont.innerHTML="" // it ie necessary so as to remove the earlier button
+            const button = buttonCreate(state.count);
+            cont.appendChild(button);
+
+        }
+        buttonReRender()
+    </script>
+</body>
+</html>
