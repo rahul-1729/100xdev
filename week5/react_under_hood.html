@@ -3,6 +3,7 @@
     <div id ="Button_container"></div>
 
     <script>
+        //state.................
         let state ={
             count :0
         }
@@ -11,6 +12,8 @@
              state.count = state.count+1;
              buttonReRender();
         }
+        //component..............
+        //you can see a component is taking a state as an input and making element according to the sate
         function buttonCreate(count)
         {   
            const button = document.createElement("button");
